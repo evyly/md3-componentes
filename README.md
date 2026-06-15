@@ -14,7 +14,7 @@ Sem trocentas linhas de código, sem instalar um monte de coisa. É só copiar o
 Um indicador de progresso giratório com um efeito ondulado muito lindo!
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/eiriq/md3-componentes@bd9b058b492c3d4d400b72195f0d03fffad27e0c/md3-expressive-progress-indicator-wave-circular.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/evyly/md3-componentes@bd9b058b492c3d4d400b72195f0d03fffad27e0c/md3-expressive-progress-indicator-wave-circular.js"></script>
 <md3-expressive-progress-indicator-wave-circular></md3-expressive-progress-indicator-wave-circular>
 ```
 
@@ -41,7 +41,7 @@ Um indicador de progresso giratório com um efeito ondulado muito lindo!
 Aquele loading clássico do Material 3 Expressive Morph, com animação de morphing (inclusive, é meu favorito)
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/eiriq/md3-componentes@d967f5fd236c7924e263a2fd1620083ea22e5169/md3-expressive-loading-indicator.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/evyly/md3-componentes@cbd0f6b230a2f5a781ba480a3056e04bb8808e53/md3-expressive-loading-indicator.js"></script>
 <md3-expressive-loading-indicator></md3-expressive-loading-indicator>
 ```
 
@@ -69,9 +69,37 @@ Aquele loading clássico do Material 3 Expressive Morph, com animação de morph
 
 ---
 
-## 📝 Tabela de Variáveis CSS
+## 🌀 Fundo Orgânico
 
-Pra estilizar, é só sobrescrever essas variáveis na classe que você criar!
+Formas fluidas e animadas que flutuam pelo background. Perfeito pra dar vida e profundidade pro app, seguindo a linguagem MD3 Expressive.
+
+```html
+<script src="https://cdn.jsdelivr.net/gh/evyly/md3-componentes@31f0b400e6669d7c6b2fcd4dfb26d2dcbe99e575/fundo-organico.js"></script>
+<fundo-organico></fundo-organico>
+```
+
+**Customizando do meu jeito:**
+
+```html
+<style>
+  .fundo-rosa {
+    color: #FF4081; /* Controla a cor principal da forma */
+    opacity: 0.15; /* Controla a transparência */
+  }
+</style>
+
+<!-- Velocidade lenta e tamanho maior -->
+<fundo-organico class="fundo-rosa" largura="600" velocidade="lenta"></fundo-organico>
+
+<!-- Velocidade média e tamanho padrão -->
+<fundo-organico velocidade="media"></fundo-organico>
+```
+
+---
+
+## 📝 Tabela de Variáveis CSS e Atributos
+
+Pra estilizar, é só sobrescrever essas variáveis na classe que você criar! Pros componentes com atributos, dá pra passar direto na tag.
 
 **Loading Indicator**
 
@@ -90,6 +118,16 @@ Pra estilizar, é só sobrescrever essas variáveis na classe que você criar!
 | `--cor-primaria` | Cor da ondinha principal | `#6750A4` |
 | `--cor-container-secundario` | Cor da trilha de fundo | `#E8DEF8` |
 
+**Fundo Orgânico**
+
+| Atributo/Variável | O que faz | Padrão / Exemplo |
+|---|---|---|
+| Atributo: `largura` | Tamanho da forma orgânica | `500` |
+| Atributo: `velocidade` | Velocidade da animação (`lenta`, `media`) | `media` |
+| Propriedade CSS: `color` | Define a cor do SVG | Herdada do tema |
+| Propriedade CSS: `opacity` | Controla a transparência da forma | `0.12` |
+
 ---
 
 Feito com carinho por **Kimberly Victória** 💜
+```
