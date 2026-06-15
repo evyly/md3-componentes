@@ -27,13 +27,6 @@ class MdharmonySwitch extends HTMLElement {
           cursor: pointer;
           user-select: none;
           -webkit-tap-highlight-color: transparent;
-          --cor-primaria: #6750A4;
-          --cor-sobre-primaria: #FFFFFF;
-          --cor-variante-superficie: #E7E0EC;
-          --cor-contorno: #79747E;
-          --duracao-movimento: 350ms;
-          --curva-movimento-expressivo: cubic-bezier(0.34, 1.56, 0.64, 1);
-          --curva-movimento-esticado: cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         :host([desativado]) {
@@ -67,12 +60,12 @@ class MdharmonySwitch extends HTMLElement {
           position: absolute;
           width: 100%;
           height: 100%;
-          background-color: var(--cor-variante-superficie);
-          border: 2px solid var(--cor-contorno);
+          background-color: var(--md-sys-color-surface-variant);
+          border: 2px solid var(--md-sys-color-outline);
           border-radius: 16px;
           box-sizing: border-box;
-          transition: background-color var(--duracao-movimento) linear,
-                      border-color var(--duracao-movimento) linear;
+          transition: background-color var(--md-motion-duration) linear,
+                      border-color var(--md-motion-duration) linear;
           z-index: 1;
         }
 
@@ -83,27 +76,27 @@ class MdharmonySwitch extends HTMLElement {
           width: 16px;
           height: 16px;
           transform: translateY(-50%);
-          background-color: var(--cor-contorno);
+          background-color: var(--md-sys-color-outline);
           border-radius: 100px;
           z-index: 3;
           transition:
-            left var(--duracao-movimento) var(--curva-movimento-expressivo),
-            width var(--duracao-movimento) var(--curva-movimento-esticado),
-            height var(--duracao-movimento) var(--curva-movimento-esticado),
-            background-color var(--duracao-movimento) linear;
+            left var(--md-motion-duration) var(--md-motion-easing-expressive),
+            width var(--md-motion-duration) var(--md-motion-easing-stretch),
+            height var(--md-motion-duration) var(--md-motion-easing-stretch),
+            background-color var(--md-motion-duration) linear;
           transform-origin: center left;
         }
 
         input:checked ~ .trilha {
-          background-color: var(--cor-primaria);
-          border-color: var(--cor-primaria);
+          background-color: var(--md-sys-color-primary);
+          border-color: var(--md-sys-color-primary);
         }
 
         input:checked ~ .marcador {
           left: calc(100% - 24px - 4px);
           width: 24px;
           height: 24px;
-          background-color: var(--cor-sobre-primaria);
+          background-color: var(--md-sys-color-on-primary);
           transform-origin: center right;
         }
 
@@ -112,7 +105,7 @@ class MdharmonySwitch extends HTMLElement {
         }
 
         input:focus-visible ~ .trilha {
-          outline: 2px solid var(--cor-primaria);
+          outline: 2px solid var(--md-sys-color-primary);
           outline-offset: 2px;
         }
       </style>
