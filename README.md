@@ -97,6 +97,48 @@ Formas fluidas e animadas que flutuam pelo background. Perfeito pra dar vida e p
 
 ---
 
+## 📊 Progress Indicator Linear Wavy
+
+Uma barra de progresso linear com efeito ondulado, seguindo o estilo do M3E. Perfeita pra mostrar progresso de carregamento, uploads, etapas de formulário e afins!
+
+```html
+<script src="https://cdn.jsdelivr.net/gh/evyly/md3-componentes@dd39fc3552019fcebc85b1f40d2415c54a8a2022/progresso-linear.js"></script>
+<m3e-linear-progress-indicator variant="wavy" value="0" max="100"></m3e-linear-progress-indicator>
+```
+
+**Exemplo animado com JS:**
+
+```html
+<script src="https://cdn.jsdelivr.net/gh/evyly/md3-componentes@dd39fc3552019fcebc85b1f40d2415c54a8a2022/progresso-linear.js"></script>
+
+<m3e-linear-progress-indicator id="barra" variant="wavy" value="0" max="100" style="width: 480px;"></m3e-linear-progress-indicator>
+<span id="pct">0%</span>
+<button onclick="play()">▶ Play</button>
+
+<script>
+  const barra = document.getElementById('barra');
+  const pct = document.getElementById('pct');
+  let rodando = false;
+
+  function play() {
+    if (rodando) return;
+    rodando = true;
+    let v = 0;
+    barra.value = 0;
+    const passo = () => {
+      v++;
+      barra.value = v;
+      pct.textContent = v + '%';
+      if (v < 100) setTimeout(passo, 40);
+      else rodando = false;
+    };
+    setTimeout(passo, 40);
+  }
+</script>
+```
+
+---
+
 ## 📝 Tabela de Variáveis CSS e Atributos
 
 Pra estilizar, é só sobrescrever essas variáveis na classe que você criar! Pros componentes com atributos, dá pra passar direto na tag.
@@ -127,7 +169,14 @@ Pra estilizar, é só sobrescrever essas variáveis na classe que você criar! P
 | Propriedade CSS: `color` | Define a cor do SVG | Herdada do tema |
 | Propriedade CSS: `opacity` | Controla a transparência da forma | `0.12` |
 
+**Progress Indicator Linear Wavy**
+
+| Atributo | O que faz | Padrão |
+|---|---|---|
+| `value` | Valor atual do progresso | `0` |
+| `max` | Valor máximo | `100` |
+| `variant` | Estilo da barra (`wavy`) | — |
+
 ---
 
 Feito com carinho por **Kimberly Victória** 💜
-```
